@@ -1,10 +1,10 @@
-const connection = require('../DB/dbConnection');
+const connection = require('../../DB/dbConnection');
 
 
-module.exports.single = function (req, res) {
+module.exports.category = function (req, res) {
   let id = req.params.id;
 
-  connection.query('Select * from category where category_id  = ?', id, function (error, results, fields) {
+  connection.query('Select * from category where category_id = ?', id, function (error, results, fields) {
     if (error) {
       res.json({
         status: false,
@@ -13,7 +13,7 @@ module.exports.single = function (req, res) {
     } else {
       if (results.length === 0) {
         res.json({
-          message: 'category_id is not exists in category_id',
+          message: 'category_id is not exists in category table',
           data: results
         })
 

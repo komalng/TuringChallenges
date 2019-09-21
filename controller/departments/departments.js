@@ -1,10 +1,10 @@
-const connection = require('../DB/dbConnection');
+const connection = require('../../DB/dbConnection');
 
 
-module.exports.details = function (req, res) {
+module.exports.department = function (req, res) {
   let tableName = req.params.tableDetails;
 
-  connection.query('Select * from ' + tableName, function (error, results, fields) {
+  connection.query('Select * from department', function (error, results, fields) {
     if (error) {
       res.json({
         status: false,
