@@ -11,7 +11,8 @@ const departmentCategories = require("./controller/categories/departmentCategori
 // attributes
 const attributes = require("./controller/attributes/attributes");
 const valuesOfAttributes = require("./controller/attributes/valuesOfAttributes")
-
+// customer 
+const register = require("./controller/customer/register");
 app.use(express.json());
 
 //Department
@@ -34,11 +35,9 @@ app.get("/attributes/values/:attribute_id",valuesOfAttributes.attributesthroughi
 
 
 
-// app.get("/:tableDetails",department.details);
-// app.get("/departments/:id",singleDepartment.single);
-// app.get("/category/:id",singleCategory.single);
-// app.post("/api/customer",newCustomer.customer);
+// customer
 
+app.post("/customer",register.register);
 
 
 app.listen(2000,()=>{console.log("Express is listening port number 2000")})
