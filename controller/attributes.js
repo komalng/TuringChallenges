@@ -34,6 +34,7 @@ module.exports.attributesthroughid = function (req, res) {
         })
       } else {
 
+        console.log("Hello");
         res.json(rows)
       }
     }
@@ -52,6 +53,7 @@ module.exports.attributeValuesthroughid= function (req, res) {
         })
       } else {
           if(rows.length < 1){
+              console.log("hello");
               res.send({
                   message:"attribute_id is not exists in attribute_value",
                   data:rows
